@@ -1,0 +1,20 @@
+.box{
+	display: flex
+}
+.block1{
+	margin-left: 40px;
+	margin-right: 40px;
+	font-family: Arial;
+	text-align: center;
+}
+*{
+	margin: 0;
+	padding: 0
+}
+h1{
+	margin-top: 50px;
+	font-weight: 100
+}
+p{
+	margin-top: 20px
+}
