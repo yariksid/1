@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="score"> Счет: 0</div>
+	<div class="main">
+		<div class="hole"></div>
+		<div class="hole"></div>
+		<div class="hole"></div>
+		<div class="hole"></div>
+		<div class="hole"></div>
+		<div class="hole"></div>
+	<script type="text/javascript">
+let scoreShow = document.querySelector('.score');
+let holes = document.querySelectorAll('.hole');	
+let main = document.querySelector('.main');
+let score = 0;
+let lastRand = 0;
+
+let img = document.createElement('img');
+document.body.appendChild(img);
+img.classList.add('mole');
+
+setInterval(show, 1000)
+	function show () {
+	let rand = Math.floor(Math.random() * holes.length);
+		if (rand != lastRand){
+			img.src = 'mole.svg';
+			img.style.top = holes[rand].getBoundingClientRect().y-130 + 'px';
+			img.style.left = holes[rand].getBoundingClientRect().x + 'px'
+		}
+		lastRand = rand
+	}
+ 	img.onclick = function(){
+ 		if(score > 4){
+ 			main.style.display = 'none';
+ 			scoreShow.style.display = 'none'
+ 			img.style.display = 'none';
+ 			let div = document.createElement('div');
+ 			let btn = document.createElement('button');
+ 			document.body.appendChild(div);
+ 			document.body.appendChild(btn);
+ 			div.classList.add('win');
+ 			div.innerHTML = 'You win!';
+ 			btn.innerHTML = 'Level 2';
+ 			btn.classList.add('btn');
+ 			 	btn.onclick = function(){
+ 			 		img.style.display = 'block';
+ 					main.style.display = 'block';
+ 					scoreShow.style.display = 'block';
+ 					div.style.display = 'none';
+ 					btn.style.display = 'none';
+ 					score = 0;
+ 					scoreShow.innerHTML = 'Счет: ' + score;
+ 				}
+
+ 		} else {
+ 			score = score + 1
+ 			scoreShow.innerHTML = 'Счет: ' + score;
+ 			img.style.display = 'none';
+ 			show();
+ 			img.style.display = 'inline'
+ 		}
+ 	}
+
+
+	</script>
+	</div>
+</body>
+</html>

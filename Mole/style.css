@@ -1,0 +1,43 @@
+body{
+	background-color: yellow;
+	margin: 0;
+	padding: 0;
+}
+.main{
+	display: flex;
+	margin: 100px 100px;
+}
+.hole{
+	height: 100px;
+	width: 200px;
+	background-image: url(dirt.svg);
+	margin-left: 50px;
+	background-size: 100% 100%;
+	z-index: 2;
+}
+.mole{
+	position: absolute;
+	width: 150px;
+	z-index: 1;
+}
+.win{
+	height: 500px;
+	width: 500px;
+	background: orange;
+	margin: auto;
+	padding: 150px;
+	box-sizing: border-box;
+	font-size: 100px;
+}
+.btn{
+	position: absolute;
+	top: 400px;
+	left: 630px;
+	border-radius: 10px;
+	padding: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	background: brown;
+	border: none;
+	border: 1px solid black;
+}
